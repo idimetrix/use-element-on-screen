@@ -8,7 +8,7 @@ export const useIntersectionObserver = <T extends HTMLElement>(
     rootMargin: "-20% 0% -75%",
     threshold: 0,
   },
-): RefObject<T> => {
+): RefObject<T | null> => {
   const ref = useRef<T>(null);
 
   useEffect(() => {

@@ -4,7 +4,7 @@ import { useIntersectionObserver } from "./useIntersectionObserver";
 
 export const useElementOnScreen = <T extends HTMLElement>(
   options?: IntersectionObserverInit,
-): [RefObject<T>, boolean] => {
+): [RefObject<T | null>, boolean] => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   const callback = ([entry]: IntersectionObserverEntry[]) => {
